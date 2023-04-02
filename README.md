@@ -13,7 +13,9 @@ Renamer.py renames files to my standard.
 # # # Notes:
 - Renames any files not under the exadox format to become the latter.
 - Files with brackets will have brackets placed after the File-Name.
-- Files that don't contain brackets will not have brackets. 
+- Files that don't contain brackets will not have brackets.
+- Will list down what files will be renamed to.
+- Will ask user if the user is going to accept name changes before renaming.
 
 # # Based on:
 - "https://exadox.com/en/articles/file-naming-convention-ten-rules-best-practice"
