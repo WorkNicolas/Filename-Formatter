@@ -6,11 +6,11 @@ Renamer.py renames files to my standard.
 - File_Name.ext
 - File Name.ext
 
-## Rename with ISO8601 date format:
+### Rename with ISO8601 date format:
 - File-Name_[NAME]_yy-mm-ddThhmmH.ext
 - File-Name_yy-mm-ddThhmmH.ext
 
-### Notes:
+## Notes:
 - Renames any files not under the exadox format to become the latter.
 - Files with brackets will have brackets placed after the File-Name.
 - Files that don't contain brackets will not have brackets.
