@@ -12,11 +12,6 @@ Based on:
 - "https://exadox.com/en/articles/file-naming-convention-ten-rules-best-practice"
 """
 
-__author__ = "Carl Nicolas Mendoza"
-__credits__ = ["Carl Nicolas Mendoza"]
-__email__ = "workcarlnicolasvmendoza@gmail.com"
-__version__ = "2023-04-02T1305H"
-
 import os
 import re
 from datetime import datetime
