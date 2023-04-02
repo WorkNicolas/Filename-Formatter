@@ -1,6 +1,6 @@
 # File-Renamer
 Renamer.py renames files to my standard.
-# File renamer for the following files:
+### File renamer for the following files:
 - yy-mm-ddThhmmH--[NAME]_File_Name.ext
 - yy-mm-ddThhmmH--File_Name.ext
 - File_Name.ext
