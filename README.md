@@ -43,3 +43,17 @@ RenamerUnderscore.py removes duplicate underscores. Seaches subfolders.
 - Sample__.txt to Sample.txt
 - Sample__2020-01-01T1000H.txt to Sample_2020-01-01T1000H.txt
 
+<hr>
+
+# RenamerInitHyphen.py
+RenamerInitHyphen.py removes initial hyphen of the file. Searches subfolders.
+
+### Example:
+- -Sam-ple-.txt to Sam-ple-.txt
+
+<hr>
+
+# Other Stuff
+## Renamer.py and RenamerWalk.py
+- Removes duplicate underscores (__)
+- Removes initial hyphen (r'-')
