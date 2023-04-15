@@ -1,13 +1,13 @@
 """
 File renamer for the following files:
-- yy-mm-ddThhmmH--[NAME]_File_Name.ext
-- yy-mm-ddThhmmH--File_Name.ext
+- yyyy-mm-ddThhmmH--[NAME]_File_Name.ext
+- yyyy-mm-ddThhmmH--File_Name.ext
 - File_Name.ext
 - File Name.ext
 
 Rename with ISO8601 date format:
-- File-Name_[NAME]_yy-mm-ddThhmmH.ext
-- File-Name_yy-mm-ddThhmmH.ext
+- File-Name_[NAME]_yyyy-mm-ddThhmmH.ext
+- File-Name_yyyy-mm-ddThhmmH.ext
 
 Notes:
 - Renames any files not under the exadox format to become the latter.
@@ -24,6 +24,10 @@ import os
 import re
 from datetime import datetime
 
+# determine path to manipulate
+path = input("(Renamer.py) Enter Path: ")
+os.chdir(path)
+
 # regex patterns
 date_pattern = r'\d{4}-\d{2}-\d{2}T\d{2}\d{2}H'
 bracket_pattern = r'\[.*?\]'
@@ -37,16 +41,11 @@ executed = False
 queried = False
 
 # loop through all files in current directory
-file_size = [file for file in os.listdir('.')]
-
-# loops
-end = 0
-
-path = input("Enter Path: ")
-
-os.chdir(path)
+file_size = [file for file in os.listdir(path)]
 
 for i in range(0,2):
+    # compared to file_size
+    end = 0
     for filename in os.listdir(path):
         # check if file is not a folder and contains two hyphens
         # checking file extensions is not necessary since I only renamed files on exts
@@ -64,10 +63,14 @@ for i in range(0,2):
                     bracket = ''
                 # extract original filename without date and bracket
                 orig_filename = re.sub(date_pattern + '|' + bracket_pattern + '|' + file_ext, '', filename).replace('--', '_')
+                # remove initial '_'
+                orig_filename = orig_filename.replace('_','')
                 # replace underscores with hyphens in filename
                 new_filename = orig_filename.replace('_', '-')
                 # insert date into new filename
                 new_filename = f'{new_filename}_{bracket}_{date}{file_ext}'
+                # remove '__'
+                new_filename = new_filename.replace('__','_')
                 # removes '--' in filename
                 new_filename = new_filename.replace('--', '')
                 # rename file
@@ -100,11 +103,11 @@ for i in range(0,2):
             # reached the end of the loop without executing anything
             print("No files were renamed")
             i = 1
-        elif end == len(file_size) and not queried:
-            query = input("Accept Changes [Y/N]: ")
+        end += 1
+    if end == len(file_size) and not queried:
+            query = input("Accept Changes [ACCEPT]: ")
             queried = True
-            if query.upper() == 'Y':
+            if query.upper() == 'ACCEPT':
                 print("Changes accepted")
             else:
                 print("Changes not accepted")
-        end += 1
