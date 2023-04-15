@@ -17,7 +17,6 @@ for root, dirs, files in os.walk(path):
 # regex patterns
 date_pattern = r'\d{4}-\d{2}-\d{2}T\d{2}\d{2}H'
 bracket_pattern = r'\[.*?\]'
-hyphen_pattern = r'^(-[^-]*)?'
 
 # only file extensions in this list will be renamed
 exts = ['.docx', '.doc', '.odt', '.pptx', '.odp', '.png', '.jpg', '.jfif', '.jpeg', '.gif', '.bmp', '.pdf', '.xlsx', 'xls', '.txt']
@@ -62,6 +61,8 @@ for i in range(0,2):
                     new_filename = new_filename.replace('__','_')
                     # remove '--'
                     new_filename = new_filename.replace('--', '')
+                    # removes initial '-'
+                    new_filename = re.sub(r'^-', '', filename, count=1)
                     # rename file
                     if queried:
                         os.rename(filename, new_filename)
