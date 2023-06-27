@@ -53,6 +53,14 @@ RenamerInitHyphen.py removes initial hyphen of the file. Searches subfolders.
 
 <hr>
 
+# RenamerDashTimezone.py
+RenamerDashTimezone.py removes dashes and converts my +08:00 timezone code (H) to +0800. For strict ISO-8601 purists. It will only touch filenames with timestamps.
+
+### Example:
+- 2023-01-30T1400H to 20230130T1400+0800
+
+<hr>
+
 # Other Stuff
 ## Renamer.py and RenamerWalk.py
 - Removes duplicate underscores (__)
