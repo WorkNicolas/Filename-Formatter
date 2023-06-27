@@ -39,10 +39,15 @@ exts = ['.docx', '.doc', '.odt', '.pptx', '.odp', '.png', '.jpg', '.jfif', '.jpe
 executed = False
 queried = False
 
+# ends range(0,2)
+changes = False
+
 # loop through all files in current directory
 file_size = [file for file in os.listdir(path)]
 
 for i in range(0,2):
+    if changes and not queried:
+        break
     # compared to file_size
     end = 0
     for filename in os.listdir(path):
