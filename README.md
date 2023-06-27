@@ -61,6 +61,10 @@ RenamerDashTimezone.py removes dashes and converts my +08:00 timezone code (H) t
 
 <hr>
 
+# RenamerTimeRemover.py
+RenamerTimeRemover.py removes the time from the filenames. It does not involve +0800.
+Usecase: Sacrificing time for readability and strict ISO-8601 compliance.
+
 # Other Stuff
 ## Renamer.py and RenamerWalk.py
 - Removes duplicate underscores (__)
